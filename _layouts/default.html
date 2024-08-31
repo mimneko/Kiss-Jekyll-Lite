@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">{{ page.title }}</title>
+    <title id="page-title">
+    {% if page.title %}
+        {{ page.title }}
+    {% else %}
+        {{ page.name | split: '.' | first | capitalize }}
+    {% endif %}
+    </title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://mimneko.github.io/note/assets/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://mimneko.github.io/note/assets/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://mimneko.github.io/note/assets/icons/favicon-16x16.png">
@@ -53,7 +59,12 @@
                 <div class="main-wrap">
                     <article>
                         <div class="article-header">
-                            <h1 id="article-title">{{ page.title }}</h1>
+                            <h1 id="article-title">
+                            {% if page.title %}
+                                {{ page.title }}
+                            {% else %}
+                                {{ page.name | split: '.' | first | capitalize }}
+                            {% endif %}
                             <div id="article-meta">
                             </div>
                         </div>
