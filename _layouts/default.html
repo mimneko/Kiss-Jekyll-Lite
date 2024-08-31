@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="page-title">{{ page.title }}</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.mimnekonote_url }}/assets/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.mimnekonote_url }}/assets/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.mimnekonote_url }}/assets/icons/favicon-16x16.png">
-    <link rel="preload" href="{{ site.mimnekonote_url }}/assets/css/styles.css" as="style">
-    <link rel="stylesheet" href="{{ site.mimnekonote_url }}/assets/css/styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.data.info.mimnekonote_url }}/assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.data.info.mimnekonote_url }}/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.data.info.mimnekonote_url }}/assets/icons/favicon-16x16.png">
+    <link rel="preload" href="{{ site.data.info.mimnekonote_url }}/assets/css/styles.css" as="style">
+    <link rel="stylesheet" href="{{ site.data.info.mimnekonote_url }}/assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    {% if site.styles %}
-        {% for style in site.styles %}
-            <link rel="stylesheet" href="{{ site.baseurl }}{{ style | safe }}">
+    {% if site.data.info.styles %}
+        {% for style in site.data.info.styles %}
+            <link rel="stylesheet" href="{{ site.data.info.baseurl }}{{ style | safe }}">
         {% endfor %}
     {% endif %}
     {% if page.styles %}
         {% for style in page.styles %}
-            <link rel="stylesheet" href="{{ site.baseurl }}{{ style | safe }}">
+            <link rel="stylesheet" href="{{ site.data.info.baseurl }}{{ style | safe }}">
         {% endfor %}
     {% endif %}
-    {% if site.customs %}
-        {% for custom in site.customs %}
+    {% if site.data.info.customs %}
+        {% for custom in site.data.info.customs %}
             {{ custom | safe }}
         {% endfor %}
     {% endif %}
@@ -37,9 +37,9 @@
         <header>
             <div class="header-content">
                 <div class="logo">
-                    <a href="{{ site.mimnekonote_url }}/">
-                        <img src="{{ site.mimnekonote_url }}/assets/icons/mimneko-note-icon.png" alt="サイトアイコン" class="site-icon">
-                        <span class="site-name">{{ site.title }}</span>
+                    <a href="{{ site.data.info.mimnekonote_url }}/">
+                        <img src="{{ site.data.info.mimnekonote_url }}/assets/icons/mimneko-note-icon.png" alt="サイトアイコン" class="site-icon">
+                        <span class="site-name">{{ site.data.info.title }}</span>
                     </a>
                 </div>
                 
@@ -72,20 +72,20 @@
                 
                 {% include navigation.html %}
                 
-                <p class="copyright">Copyright &copy; {{ site.launch_date | date: "%Y" }} - {{ "now" | date: "%Y" }} {{ site.title }}.<br class="copyright-break"> All rights reserved.</p>
+                <p class="copyright">Copyright &copy; {{ site.data.info.launch_date | date: "%Y" }} - {{ "now" | date: "%Y" }} {{ site.data.info.title }}.<br class="copyright-break"> All rights reserved.</p>
             </div>
         </footer>
         
     </div>
 
-    {% if site.scripts %}
-        {% for script in site.scripts %}
-            <script src="{{ site.baseurl }}{{ script | safe }}"></script>
+    {% if site.data.info.scripts %}
+        {% for script in site.data.info.scripts %}
+            <script src="{{ site.data.info.baseurl }}{{ script | safe }}"></script>
         {% endfor %}
     {% endif %}
     {% if page.scripts %}
         {% for script in page.scripts %}
-            <script src="{{ site.baseurl }}{{ script | safe }}"></script>
+            <script src="{{ site.data.info.baseurl }}{{ script | safe }}"></script>
         {% endfor %}
     {% endif %}
     
