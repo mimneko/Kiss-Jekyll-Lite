@@ -7,7 +7,7 @@
     {% if page.title %}
         {{ page.title }}
     {% else %}
-        {{ page.name | split: '.' | first | capitalize }}
+        {{ page.name | remove_first: '.md' | remove_first: '.html' }}
     {% endif %}
     </title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://mimneko.github.io/note/assets/icons/apple-touch-icon.png">
@@ -63,7 +63,7 @@
                             {% if page.title %}
                                 {{ page.title }}
                             {% else %}
-                                {{ page.name | split: '.' | first | capitalize }}
+                                {{ page.name | remove_first: '.md' | remove_first: '.html' }}
                             {% endif %}
                             <div id="article-meta">
                             </div>
