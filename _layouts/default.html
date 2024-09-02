@@ -48,8 +48,20 @@
                         <span class="site-name">みむねこのーと</span>
                     </a>
                 </div>
+
+                <!-- ハンバーガーメニュー部分 -->
+                <div class="hamburger-menu">
                 
-                {% include navigation.html %}
+                    <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+                    <input id="drawer-input" class="drawer-hidden" type="checkbox">
+                
+                    <!-- ハンバーガーアイコン -->
+                    <label for="drawer-input" class="drawer-open"><span></span></label>
+                
+                    <!-- メニュー -->
+                    {% include navigation.html %}
+            
+                </div>
                 
             </div>
         </header>
