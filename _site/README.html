@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="page-title">
-    {% if page.title %}
-        {{ page.title }}
-    {% else %}
-        {{ page.name | remove_first: '.md' | remove_first: '.html' }}
-    {% endif %}
+    
+        README
+    
     </title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://mimneko.github.io/note/assets/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://mimneko.github.io/note/assets/icons/favicon-32x32.png">
@@ -16,26 +14,10 @@
     <link rel="preload" href="https://mimneko.github.io/note/assets/css/styles.css" as="style">
     <link rel="stylesheet" href="https://mimneko.github.io/note/assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    {% if site.styles %}
-        {% for style in site.styles %}
-            <link rel="stylesheet" href="{{ style | relative_url }}">
-        {% endfor %}
-    {% endif %}
-    {% if page.styles %}
-        {% for style in page.styles %}
-            <link rel="stylesheet" href="{{ style | relative_url }}">
-        {% endfor %}
-    {% endif %}
-    {% if site.customs %}
-        {% for custom in site.customs %}
-            {{ custom | safe }}
-        {% endfor %}
-    {% endif %}
-    {% if page.customs %}
-        {% for custom in page.customs %}
-            {{ custom | safe }}
-        {% endfor %}
-    {% endif %}
+    
+    
+    
+    
 </head>
 <body>
     <div class="page-container">
@@ -60,7 +42,13 @@
                 
                     <!-- メニュー -->
                     <nav id="header-menu" class="navigation-content">
-                        {% include navigation.html %}
+                        <!-- _includes/navigation.html -->
+<ul class="navigation-list">
+    <li><a href="https://mimneko.github.io/note/">ホーム</a></li>
+    <li><a href="https://mimneko.github.io/note/about/">このサイトについて</a></li>
+    <li><a href="https://mimneko.github.io/note/tags/">カテゴリ＆タグ</a></li>
+</ul>
+
                     </nav>
             
                 </div>
@@ -73,17 +61,18 @@
                     <article>
                         <div class="article-header">
                             <h1 id="article-title">
-                            {% if page.title %}
-                                {{ page.title }}
-                            {% else %}
-                                {{ page.name | remove_first: '.md' | remove_first: '.html' }}
-                            {% endif %}
+                            
+                                README
+                            
                             <div id="article-meta">
                             </div>
                         </div>
                         <div class="article-body">
                             
-                            {{ content }}
+                            <h1 id="kiss-jekyll-lite">Kiss-Jekyll-Lite</h1>
+<p>みむねこがおくる、シンプルながらも美しいJekyllデザイン（簡易版）</p>
+
+
                             
                         </div>
                     </article>
@@ -95,10 +84,16 @@
             <div class="footer-content">
                 
                 <nav id="footer-menu" class="navigation-content">
-                    {% include navigation.html %}
+                    <!-- _includes/navigation.html -->
+<ul class="navigation-list">
+    <li><a href="https://mimneko.github.io/note/">ホーム</a></li>
+    <li><a href="https://mimneko.github.io/note/about/">このサイトについて</a></li>
+    <li><a href="https://mimneko.github.io/note/tags/">カテゴリ＆タグ</a></li>
+</ul>
+
                 </nav>
                 
-                <p class="copyright">Copyright &copy; 2023 - {{ "now" | date: "%Y" }} <br class="copyright-break">みむねこのーと All rights reserved.</p>
+                <p class="copyright">Copyright &copy; 2023 - 2024 <br class="copyright-break">みむねこのーと All rights reserved.</p>
             </div>
         </footer>        
         
@@ -107,16 +102,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://mimneko.github.io/note/assets/js/navigation-menu.js"></script>
     <script src="https://mimneko.github.io/note/assets/js/copy-code.js"></script>
-    {% if site.scripts %}
-        {% for script in site.scripts %}
-            <script src="{{ script | relative_url }}"></script>
-        {% endfor %}
-    {% endif %}
-    {% if page.scripts %}
-        {% for script in page.scripts %}
-            <script src="{{ script | relative_url }}"></script>
-        {% endfor %}
-    {% endif %}
+    
+    
     
 </body>
 </html>
